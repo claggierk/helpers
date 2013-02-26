@@ -1,0 +1,29 @@
+mkdir MonkeyPatch
+touch MonkeyPatch.py
+
+# This is the contents of MonkeyPatch.py
+class MonkeyPatchClass:
+    def monkey_patch_method(self):
+        print "This is the original monkey_patch method"
+
+def main():
+    monkey_instance = MonkeyPatchClass()
+    monkey_instance.monkey_patch_method()
+
+if __name__ == "__main__":
+    main()
+
+# open the python interpreter
+python
+
+# replace the monkey_patch_method method with another_method ... crazy! 
+>>> from MonkeyPatch import MonkeyPatchClass
+>>> f = MonkeyPatchClass()
+>>> f.monkey_patch_method()
+This is the original monkey_patch method
+>>> def another_method(self):
+...     print "This is a brand new method..."
+... 
+>>> MonkeyPatchClass.monkey_patch_method = another_method
+>>> f.monkey_patch_method()
+This is a brand new method...
