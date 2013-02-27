@@ -7,6 +7,12 @@ class MonkeyPatchClass:
 def main():
     monkey_instance = MonkeyPatchClass()
     monkey_instance.monkey_patch_method()
+    
+    def another_method(self):
+        print "This is a another_method"
+    MonkeyPatchClass.monkey_patch_method = another_method
+
+    monkey_instance.monkey_patch_method()
 
 # This is main
 if __name__ == "__main__":
