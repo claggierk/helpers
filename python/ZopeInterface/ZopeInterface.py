@@ -5,7 +5,7 @@ from zope.component import getGlobalSiteManager
 
 class IObject(Interface):
     def talk(word):
-        "a docstring describing what this method does"
+        """a docstring describing what this method does"""
 
 class Object(object):
     implements(IObject)
