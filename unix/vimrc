@@ -1,0 +1,52 @@
+"Turn on line numbering "
+set nu
+
+" Higlhight search"
+set hls
+
+" Change colorscheme from default to delek"
+colorscheme morning
+colorscheme default
+colorscheme blue
+colorscheme default
+colorscheme delek
+colorscheme desert
+colorscheme elflord
+colorscheme koehler
+colorscheme morning
+colorscheme murphy
+colorscheme pablo
+colorscheme peachpuff
+colorscheme ron
+colorscheme shine
+colorscheme slate
+colorscheme zellner
+
+" I like these one "
+colorscheme torte
+colorscheme evening
+colorscheme darkblue
+
+
+set nohlsearch
+set ai
+set bg=dark
+set showmatch
+highlight SpecialKey ctermfg=DarkGray
+set listchars=tab:>-,trail:~
+set list
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+syntax on
+set listchars=tab:>-
+set listchars+=trail:.
+set ignorecase
+set smartcase
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
