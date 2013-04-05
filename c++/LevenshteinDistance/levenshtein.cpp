@@ -6,8 +6,13 @@ using namespace std;
 
 unsigned Compute_Levenshtein_Distance(string s, string t)
 {
+    // for all i and j, d[i,j] will hold the Levenshtein distance between
+    // the first i characters of s and the first j characters of t;
+    // note that d has (m+1)x(n+1) values
+    
     unsigned m = s.size() - 1;
     unsigned n = t.size() - 1;
+    
     vector< vector<unsigned> > d;
     for(unsigned i = 0; i < m+2; i++)
     {
@@ -18,10 +23,12 @@ unsigned Compute_Levenshtein_Distance(string s, string t)
             d.at(i).push_back(0);
         }
     }
+    
     for(unsigned i = 0; i < m+2; i++)
     {
         d.at(i).at(0) = i; // the distance of any first string to an empty second string
     }
+    
     for(unsigned j = 0; j < n+2; j++)
     {
         d.at(0).at(j) = j; // the distance of any second string to an empty first string
@@ -31,7 +38,6 @@ unsigned Compute_Levenshtein_Distance(string s, string t)
     {
         for(unsigned i = 1; i < m+2; i++)
         {
-            //print "t[j]: %s --- s[i]: %s" % (t[j-1], s[i-1])
             if(s.at(i-1) == t.at(j-1))
             {
                 d.at(i).at(j) = d.at(i-1).at(j-1); // no operation required
