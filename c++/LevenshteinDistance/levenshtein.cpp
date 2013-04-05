@@ -4,7 +4,7 @@
 
 using namespace std;
 
-unsigned Compute_Levenshtein_Distance(string s, string t)
+unsigned ComputeLevenshteinDistance(string s, string t)
 {
     // for all i and j, d[i,j] will hold the Levenshtein distance between
     // the first i characters of s and the first j characters of t;
