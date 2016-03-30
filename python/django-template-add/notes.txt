@@ -1,0 +1,19 @@
+{% if "1" == 1 %} # False
+  <div class="test">FUBAR 0</div>
+{% endif %}
+
+{% if 1|add:0 == 1 %} # True
+  <div class="test">FUBAR 1</div> 
+{% endif %}
+
+{% if "1"|add:0 == 1 %} # True
+  <div class="test">FUBAR 2</div>
+{% endif %}
+
+{% if "1"|add:"0" == 1 %} # True
+  <div class="test">FUBAR 3</div>
+{% endif %}
+
+{% if 1|add:"0" == 1 %} # True
+  <div class="test">FUBAR 4</div>
+{% endif %}
